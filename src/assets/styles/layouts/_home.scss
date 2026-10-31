@@ -1,13 +1,5 @@
 @use "../variables";
 
-// hacer una funcion para el tamaño del texto en media rules
-// uuuuhhhh quizas esa funcion va en variables??? y tengo que importar algo como parcial
-// idk brother
-
-@function fontSizer($size, $time) {
-  @return $size * $time;
-}
-
 body {
   background-color: variables.$bg;
   color: variables.$body;
@@ -26,14 +18,14 @@ body {
   }
 }
 
-// HEADER //
-
 .flexbox {
   display: flex;
   gap: 1rem;
   justify-content: space-between;
   flex-direction: row;
 }
+
+// HEADER //
 
 header {
   margin: 1rem 1rem 2rem 1rem; // media rule para el margen
@@ -63,7 +55,7 @@ header {
 
 img {
   width: 35%;
-  filter: drop-shadow(black 0rem 0rem 5rem);
+  filter: drop-shadow(variables.$bg);
 
   @media (width>=variables.$deskMinWidth) {
     width: 15%;
