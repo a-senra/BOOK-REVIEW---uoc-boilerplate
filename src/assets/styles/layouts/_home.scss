@@ -1,0 +1,192 @@
+@use "../variables";
+
+// hacer una funcion para el tamaño del texto en media rules
+// uuuuhhhh quizas esa funcion va en variables??? y tengo que importar algo como parcial
+// idk brother
+
+@function fontSizer($size, $time) {
+  @return $size * $time;
+}
+
+body {
+  background-color: variables.$bg;
+  color: variables.$body;
+  font-family: variables.$font-family-sans-serif;
+  font-size: variables.$body-size;
+  line-height: 1rem;
+  text-align: justify;
+
+  @media (width>=variables.$deskMinWidth) {
+    font-size: variables.$body-size-scale;
+    line-height: 1.5rem;
+  }
+  @media (width>=variables.$hdMinWidth) {
+    font-size: variables.$body-size-scaleHD;
+    line-height: 2rem;
+  }
+}
+
+// HEADER //
+
+.flexbox {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+header {
+  margin: 1rem 1rem 2rem 1rem; // media rule para el margen
+
+  ul {
+    list-style: none;
+    justify-content: end;
+  }
+
+  a {
+    text-decoration: none;
+    color: variables.$body;
+    margin-left: 1.2rem;
+  }
+
+  a:hover {
+    color: variables.$title;
+  }
+}
+
+// BACK IMAGES Y PORTADA
+
+.title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+img {
+  width: 35%;
+  filter: drop-shadow(black 0rem 0rem 5rem);
+
+  @media (width>=variables.$deskMinWidth) {
+    width: 15%;
+  }
+  @media (width>=variables.$hdMinWidth) {
+    width: 15%;
+  }
+}
+
+.back-images {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+
+  img {
+    opacity: 0.6;
+
+    @media (width>=variables.$deskMinWidth) {
+      width: 30%;
+    }
+  }
+}
+
+// INFO GRID //
+
+.info-grid {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  padding: 2rem 1rem 2rem 1rem;
+  margin: 2rem;
+  @media (width>=variables.$deskMinWidth) {
+    margin: 2rem 25rem 2rem 25rem;
+  }
+  @media (width>=variables.$hdMinWidth) {
+    margin: 2rem 40rem 2rem 40rem;
+  }
+  @media (width>=variables.$twoKminWidth) {
+    margin: 2rem 50rem 2rem 50rem;
+  }
+
+  div {
+    border-top: variables.$line;
+    padding-top: 0.5rem;
+
+    &:last-child {
+      border-bottom: variables.$line;
+    }
+  }
+}
+
+// TITULOS
+
+.title-font {
+  padding: 1rem 0rem 1rem 0rem;
+  color: variables.$title;
+}
+
+h1 {
+  font-size: variables.fontSizer(variables.$body-size, variables.$h1-scale);
+  line-height: 2rem;
+
+  @media (width>=variables.$deskMinWidth) {
+    font-size: variables.fontSizer(
+      variables.$body-size-scale,
+      variables.$h1-scale
+    );
+  }
+  @media (width>=variables.$hdMinWidth) {
+    font-size: variables.fontSizer(
+      variables.$body-size-scaleHD,
+      variables.$h1-scale
+    );
+  }
+}
+
+h2 {
+  font-size: variables.fontSizer(variables.$body-size, variables.$h2-scale);
+  @media (width>=variables.$deskMinWidth) {
+    font-size: variables.fontSizer(
+      variables.$body-size-scale,
+      variables.$h2-scale
+    );
+  }
+  @media (width>=variables.$hdMinWidth) {
+    font-size: variables.fontSizer(
+      variables.$body-size-scaleHD,
+      variables.$h2-scale
+    );
+  }
+}
+
+// TEXTO
+
+article {
+  margin: 2rem;
+
+  @media (width>=variables.$deskMinWidth) {
+    margin: 2rem 20rem 2rem 20rem;
+  }
+  @media (width>=variables.$hdMinWidth) {
+    margin: 2rem 25rem 2rem 25rem;
+  }
+  @media (width>=variables.$twoKminWidth) {
+    margin: 2rem 30rem 2rem 30rem;
+  }
+}
+
+p {
+  padding-bottom: 0.5rem;
+}
+
+// footer
+footer {
+  margin: 3rem 2rem 2rem 2rem;
+
+  @media (width>=variables.$deskMinWidth) {
+    margin: 10rem 5rem 5rem 5rem;
+  }
+  @media (width>=variables.$hdMinWidth) {
+    margin: 15rem 5rem 5rem 5rem;
+  }
+  @media (width>=variables.$twoKminWidth) {
+    margin: 20rem 5rem 5rem 5rem;
+  }
+}

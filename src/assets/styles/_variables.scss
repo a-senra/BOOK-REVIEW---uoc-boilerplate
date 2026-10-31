@@ -1,0 +1,27 @@
+@use "sass:color";
+@import url("https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap");
+
+$font-family-sans-serif:
+  "Silkscreen", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+  "Segoe UI Symbol";
+$font-family-serif: "Georgia", "Times New Roman", serif;
+
+$highlight: #924339;
+$title: #f27d3b;
+$body: #e6e3e3;
+$bg: #000;
+$line: 1px dotted $title;
+
+$deskMinWidth: 1280px;
+$hdMinWidth: 1920px;
+$twoKminWidth: 2160px;
+
+@function fontSizer($size, $time) {
+  @return $size * $time;
+}
+
+$body-size: 0.7rem;
+$body-size-scale: 1.1rem;
+$body-size-scaleHD: 2rem;
+$h1-scale: 2.5;
+$h2-scale: 1.8;
